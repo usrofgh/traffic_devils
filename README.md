@@ -48,6 +48,6 @@ In 'chat_id' you can specify ID of your chat (but previously you should click '/
 ```
 
 
-## Swagger docs http://127.0.0.1:8081/v1/docs
+## Swagger docs http://127.0.0.1:8081/docs
 
 ![Scenarios](https://img001.prntscr.com/file/img001/wSSnEFSKSSqOUCJzlP8i_g.png)
