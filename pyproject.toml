@@ -1,0 +1,54 @@
+[tool.poetry]
+name = "traffic-devils-test"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+sqlalchemy = "^2.0.36"
+pydantic = "^2.10.3"
+pydantic-settings = "^2.6.1"
+fastapi = "^0.115.6"
+alembic = "^1.14.0"
+uvicorn = "^0.32.1"
+asyncpg = "^0.30.0"
+passlib = "^1.7.4"
+python-jose = "^3.3.0"
+bcrypt = "^4.2.1"
+pyjwt = "2.9.0"
+httpx = "^0.28.1"
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.8.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+ignore = ["B008", "UP017", "B904", "F821"]
+exclude = [".venv", "__pycache__", ".idea", "alembic", "tests"]
+line-length = 120
+indent-width = 4
+target-version = "py312"
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+
+[tool.ruff.lint]
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "B",  # flake8-bugbear
+    "C4",  # flake8-comprehensions
+    "UP",  # pyupgrade
+    "ARG001", # unused arguments in functions
+]
