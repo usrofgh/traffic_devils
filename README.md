@@ -27,13 +27,25 @@ cd blog
 docker compose up
 ```
 
-Visit please url which is specified below (swagger docs)
+Visit http://127.0.0.1:8001/docs
 
-You can register a new user or login with help next creds to test permissions of each user
+You can register a new user or login with help the next creds:
 
 1. admin / stringst (admin rules)
 2. manager / stringst (manager rules)
 3. user / stringst (user rules)
+
+
+Example of creating a message and sending to TG(https://t.me/traffic_devills_bot)
+
+In 'chat_id' you can specify your ID of account
+```json
+{
+  "bot_token": "7617819637:AAG2qbjjMgpe4UhEXWKYYpUHJStZbTSZ6rs",
+  "chat_id": "1946569085",
+  "message": "What's up"
+}
+```
 
 
 ## Swagger docs http://127.0.0.1:8081/v1/docs
