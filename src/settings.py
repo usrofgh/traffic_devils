@@ -38,5 +38,7 @@ class Settings(BaseSettings):
     REDIS_PORT: SecretStr
     REDIS_URI: SecretStr
 
+    SENTRY_DSN: SecretStr
+    SENTRY_RATE: float
 
 settings = Settings()
