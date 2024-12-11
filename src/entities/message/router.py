@@ -29,7 +29,7 @@ async def create_message(
     response_model=list[MessageReadSchema],
     status_code=status.HTTP_200_OK
 )
-@cache(expire=30)  # Keeps in redis 30 seconds
+# @cache(expire=30)  # Keeps in redis 30 seconds
 async def get_messages(
         message_service: MessageServiceObj,
         filter_schema: Annotated[MessageFilterSchema, Query()],
