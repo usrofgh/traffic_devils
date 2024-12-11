@@ -12,7 +12,7 @@ user_router = APIRouter(
 )
 
 @user_router.post(
-    path="/",
+    path="",
     response_model=UserReadSchema,
     status_code=status.HTTP_201_CREATED
 )
@@ -24,7 +24,7 @@ async def create_user(
 
 
 @user_router.get(
-    path="/",
+    path="",
     response_model=list[UserReadSchema],
     status_code=status.HTTP_200_OK,
     dependencies=[Depends(get_current_admin_or_manager)],
@@ -73,7 +73,7 @@ async def assign_manager(
 
 @user_router.delete(
     path="/{user_id}/unassign-manager",
-    status_code=status.HTTP_204_NO_CONTENT
+    status_code=status.HTTP_200_OK
 )
 async def unassign_manager(
         user_service: UserServiceObj,
@@ -84,7 +84,7 @@ async def unassign_manager(
 
 @user_router.patch(
     path="/{user_id}/change-role",
-    status_code=status.HTTP_204_NO_CONTENT,
+    status_code=status.HTTP_200_OK,
     dependencies=[Depends(get_current_admin_user)]
 )
 async def change_role(

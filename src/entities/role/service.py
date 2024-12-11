@@ -9,11 +9,11 @@ class RoleService:
         self._repository = repository
 
     async def create_role(self, create_schema: RoleCreateSchema) -> RoleModel:
-        db_role = self._repository.find_one(name=create_schema.name)
+        db_role = await self._repository.find_one(name=create_schema.name)
         if db_role:
             raise RoleExistsException
 
-        return self._repository.add_one(create_schema)
+        return await self._repository.add_one(create_schema)
 
     async def delete_role(self, role_id: int) -> None:
         db_role = await self._repository.find_one(id=role_id)
@@ -26,4 +26,7 @@ class RoleService:
         return await self._repository.find_all(**filter_schema.model_dump(exclude_none=True))
 
     async def get_role_by_id(self, role_id: int) -> RoleModel:
-        return await self._repository.find_one(id=role_id)
+        db_role = await self._repository.find_one(id=role_id)
+        if not db_role:
+            raise RoleNotFoundException
+        return db_role

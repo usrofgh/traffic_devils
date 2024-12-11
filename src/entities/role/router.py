@@ -1,10 +1,10 @@
 from typing import Annotated
 
 from fastapi import APIRouter, Depends, Query, status
-
+from pydantic import conint
 from src.entities.auth.dependencies import get_current_admin_or_manager, get_current_admin_user
 from src.entities.role.dependencies import RoleServiceObj
-from src.entities.role.schemas import RoleCreateSchema, RoleFilterSchema, RoleReadSchema
+from src.entities.role.schemas import RoleCreateSchema, RoleFilterSchema, RoleReadSchema, RoleReadByIdSchema
 
 role_router = APIRouter(
     prefix="/roles",
@@ -13,17 +13,17 @@ role_router = APIRouter(
 
 
 @role_router.post(
-    path="/",
+    path="",
     response_model=RoleReadSchema,
     status_code=status.HTTP_201_CREATED,
     dependencies=[Depends(get_current_admin_user)]
 )
 async def create_role(role_service: RoleServiceObj, create_schema: RoleCreateSchema):
-    role_service.create_role(create_schema)
+    return await role_service.create_role(create_schema)
 
 
 @role_router.get(
-    path="/",
+    path="",
     response_model=list[RoleReadSchema],
     status_code=status.HTTP_200_OK,
     dependencies=[Depends(get_current_admin_or_manager)]

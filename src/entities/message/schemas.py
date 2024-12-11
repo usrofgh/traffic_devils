@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 
 class MessageCreateSchema(BaseModel):
@@ -25,5 +25,5 @@ class MessageFilterSchema(BaseModel):
     author_id: int | None = None
     bot_token: str | None = None
     chat_id: str | None = None
-    offset: int | None = None
-    limit: int | None = None
+    offset: int | None = Field(ge=0, default=None)
+    limit: int | None = Field(ge=0, default=None)
