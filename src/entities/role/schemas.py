@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 
 class RoleReadSchema(BaseModel):
@@ -12,5 +12,8 @@ class RoleCreateSchema(BaseModel):
 
 class RoleFilterSchema(BaseModel):
     name: str | None = None
-    offset: int | None = None
-    limit: int | None = None
+    offset: int | None  = Field(ge=0, default=None)
+    limit: int | None  = Field(ge=0, default=None)
+
+class RoleReadByIdSchema(BaseModel):
+    id: int = Field(ge=0)

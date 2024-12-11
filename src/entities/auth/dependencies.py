@@ -43,18 +43,18 @@ async def get_current_user(
 
 
 async def get_current_manager_user(db_user: UserModel = Depends(get_current_user)) -> UserModel:
-    if db_user.role_id != 3:
+    if db_user.role.name != "manager":
         raise AuthForbiddenException
     return db_user
 
 
 async def get_current_admin_user(db_user: UserModel = Depends(get_current_user)) -> UserModel:
-    if db_user.role_id != 2:
+    if db_user.role.name != "admin":
         raise AuthForbiddenException
     return db_user
 
 
 async def get_current_admin_or_manager(db_user: UserModel = Depends(get_current_user)) -> UserModel:
-    if db_user.role_id not in [2, 3]:
+    if db_user.role.name not in ["admin", "manager"]:
         raise AuthForbiddenException
     return db_user

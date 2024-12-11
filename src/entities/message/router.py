@@ -11,7 +11,7 @@ message_router = APIRouter(
     tags=["Message"]
 )
 @message_router.post(
-    path="/",
+    path="",
     response_model=MessageReadSchema,
     status_code=status.HTTP_201_CREATED
 )
@@ -24,7 +24,7 @@ async def create_message(
 
 
 @message_router.get(
-    path="/",
+    path="",
     response_model=list[MessageReadSchema],
     status_code=status.HTTP_200_OK
 )
