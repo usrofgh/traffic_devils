@@ -2,6 +2,9 @@ import sys
 from pathlib import Path
 
 import sentry_sdk
+from fastapi_cache import FastAPICache
+from fastapi_cache.backends.redis import RedisBackend
+from redis import asyncio as aioredis
 
 from src.entities.auth.router import auth_router
 from src.entities.message.router import message_router
@@ -37,3 +40,9 @@ app.include_router(auth_router)
 app.include_router(role_router)
 app.include_router(user_router)
 app.include_router(message_router)
+
+
+@app.on_event("startup")
+def startup():
+    redis = aioredis.from_url(settings.REDIS_URI)
+    FastAPICache.init(RedisBackend(redis), prefix="cache")

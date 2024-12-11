@@ -13,6 +13,7 @@
 ![](https://img.shields.io/badge/asyncio-blue?style=for-the-badge&logo=asyncio)
 ![](https://img.shields.io/badge/asyncio-blue?style=for-the-badge&logo=asyncio)
 ![](https://img.shields.io/badge/Sentry-black?style=for-the-badge&logo=Sentry&logoColor=#362D59)
+![](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
 
 <hr>
 
