@@ -44,5 +44,5 @@ app.include_router(message_router)
 
 @app.on_event("startup")
 def startup():
-    redis = aioredis.from_url(settings.REDIS_URI)
+    redis = aioredis.from_url(settings.REDIS_URI.get_secret_value())
     FastAPICache.init(RedisBackend(redis), prefix="cache")
