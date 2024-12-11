@@ -64,6 +64,10 @@ def upgrade() -> None:
     op.execute("INSERT INTO users (username, password, registered_at, role_id) VALUES ('admin', '$2b$12$mtjBwlKHHKNIn0xHHwujyuqD29wt.mCBJ8JOtSWw6AYdl22pKBVTy', '2024-12-11 18:07:48.815880', 1);")
     op.execute("INSERT INTO users (username, password, registered_at, role_id) VALUES ('manager', '$2b$12$mtjBwlKHHKNIn0xHHwujyuqD29wt.mCBJ8JOtSWw6AYdl22pKBVTy', '2024-12-11 18:07:48.815880', 2);")
     op.execute("INSERT INTO users (username, password, registered_at, role_id, manager_id) VALUES ('user', '$2b$12$mtjBwlKHHKNIn0xHHwujyuqD29wt.mCBJ8JOtSWw6AYdl22pKBVTy', '2024-12-11 18:07:48.815880', 3, 2);")
+    op.execute("INSERT INTO users (username, password, registered_at, role_id) VALUES ('another_user', '$2b$12$mtjBwlKHHKNIn0xHHwujyuqD29wt.mCBJ8JOtSWw6AYdl22pKBVTy', '2024-12-11 18:07:48.815880', 3);")
+
+
+    op.execute("""INSERT INTO messages (bot_token, chat_id, message, tg_response, author_id, created_at) VALUES ('string', 'string', 'string', '{"ok": false, "error_code": 404, "description": "Not Found"}', 3, '2024-12-11 19:27:36.546658')""")
     # ### end Alembic commands ###
 
 
