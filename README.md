@@ -39,7 +39,7 @@ You can register a new user or login with help the next creds:
 
 Example of creating a message and sending to TG(https://t.me/traffic_devills_bot)
 
-In 'chat_id' you can specify ID of your chat
+In 'chat_id' you can specify ID of your chat (but previously you should click '/start' in TG bot)
 ```json
 {
   "bot_token": "7617819637:AAG2qbjjMgpe4UhEXWKYYpUHJStZbTSZ6rs",
