@@ -1,10 +1,10 @@
 from typing import Annotated
 
 from fastapi import APIRouter, Depends, Query, status
-from pydantic import conint
+
 from src.entities.auth.dependencies import get_current_admin_or_manager, get_current_admin_user
 from src.entities.role.dependencies import RoleServiceObj
-from src.entities.role.schemas import RoleCreateSchema, RoleFilterSchema, RoleReadSchema, RoleReadByIdSchema
+from src.entities.role.schemas import RoleCreateSchema, RoleFilterSchema, RoleReadSchema
 
 role_router = APIRouter(
     prefix="/roles",
