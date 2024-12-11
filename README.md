@@ -11,7 +11,6 @@
 ![](https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white)
 ![](https://img.shields.io/badge/poetry-0088dd?style=for-the-badge&logo=poetry)
 ![](https://img.shields.io/badge/asyncio-blue?style=for-the-badge&logo=asyncio)
-![](https://img.shields.io/badge/asyncio-blue?style=for-the-badge&logo=asyncio)
 ![](https://img.shields.io/badge/Sentry-black?style=for-the-badge&logo=Sentry&logoColor=#362D59)
 ![](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
 
