@@ -1,7 +1,6 @@
 from typing import Annotated
 
 from fastapi import APIRouter, Depends, Query, status
-from fastapi_cache.decorator import cache
 
 from src.entities.auth.dependencies import get_current_user
 from src.entities.message.dependencies import MessageServiceObj
