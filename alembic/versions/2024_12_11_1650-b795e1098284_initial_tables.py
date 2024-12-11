@@ -56,6 +56,14 @@ def upgrade() -> None:
     sa.ForeignKeyConstraint(['author_id'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
+
+    op.execute("INSERT INTO roles (name) VALUES ('admin');")
+    op.execute("INSERT INTO roles (name) VALUES ('manager');")
+    op.execute("INSERT INTO roles (name) VALUES ('user');")
+
+    op.execute("INSERT INTO users (username, password, registered_at, role_id) VALUES ('admin', '$2b$12$mtjBwlKHHKNIn0xHHwujyuqD29wt.mCBJ8JOtSWw6AYdl22pKBVTy', '2024-12-11 18:07:48.815880', 1);")
+    op.execute("INSERT INTO users (username, password, registered_at, role_id) VALUES ('manager', '$2b$12$mtjBwlKHHKNIn0xHHwujyuqD29wt.mCBJ8JOtSWw6AYdl22pKBVTy', '2024-12-11 18:07:48.815880', 2);")
+    op.execute("INSERT INTO users (username, password, registered_at, role_id, manager_id) VALUES ('user', '$2b$12$mtjBwlKHHKNIn0xHHwujyuqD29wt.mCBJ8JOtSWw6AYdl22pKBVTy', '2024-12-11 18:07:48.815880', 3, 2);")
     # ### end Alembic commands ###
 
 
