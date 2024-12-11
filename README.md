@@ -22,8 +22,8 @@ It uses a multi-stage build to optimize the image size
 
 Put .env to root of the project
 ```bash
-git clone https://github.com/usrofgh/blog
-cd blog
+git clone https://github.com/usrofgh/traffic_devils.git
+cd traffic_devils
 docker compose up
 ```
 
